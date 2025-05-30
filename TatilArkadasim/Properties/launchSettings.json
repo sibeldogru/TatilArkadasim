@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TatilArkadasim": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
