@@ -5,6 +5,13 @@ string choice1 = "Bodrum";
 string choice2 = "Marmaris";
 string choice3 = "Çeşme";
 
+int choice1Price = 4000;
+int choice2Price = 3000;
+int choice3Price = 5000;
+
+int transportationPrice1 = 1500;
+int transportationPrice2 = 4000;
+
 string answer = "evet";
 
 do
@@ -65,29 +72,24 @@ do
         j++;
     }
 
-    int transportationPrice1 = 1500;
-    int transportationPrice2 = 4000;
+    int locationPrice = 0;
+if (usersChoice == choice1.ToLower())
+    locationPrice = choice1Price;
+else if (usersChoice == choice2.ToLower())
+    locationPrice = choice2Price;
+else if (usersChoice == choice3.ToLower())
+    locationPrice = choice3Price;
 
-    if (transportationChoice == transportationChoice1)
-    {
-        Console.WriteLine("Tatil gideriniz şu şekilde -> " + transportationPrice1 * guest);
-    }
-    else
-        Console.WriteLine("Tatil gideriniz şu şekilde ->" + transportationPrice2 * guest);
+int transportPrice = (transportationChoice == 1) ? transportationPrice1 : transportationPrice2; 
 
-    Console.WriteLine("Başka bir tatil planlamak istiyor musunuz? Lütfen evet ya da hayır yazınız.");
-    answer = Console.ReadLine().ToLower();
+int totalPrice = (locationPrice + transportPrice) * guest;
+
+Console.WriteLine("Tatil gideriniz şu şekilde -> " + totalPrice + " TL");
+
+Console.WriteLine("Başka bir tatil planlamak istiyor musunuz? Lütfen evet ya da hayır yazınız.");
+answer = Console.ReadLine().ToLower();
 
 } while (answer == "evet");
 
 Console.WriteLine("Tatil planlayıcısını kullandığınız için teşekkürler!");
-
-
-
-
-
-
-
-
-
 
